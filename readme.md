@@ -1,0 +1,5 @@
+This is an early version of an ActiveRecord clone. So far, we have a BaseDatabaseConnection class, which is instantiated with a path to a local database. It parses the information in the database, and creates a new class for every table it finds. The classes have instance variables corresponding to their respective column's value, getters and setters for those, as well as generic ::find_by_attrib methods for every defined attribute. BaseDatabaseConnection takes care of maintaining a unique connection to that local db, and extends that connection to the classes which it creates.
+
+The BaseModel module is what BaseDatabaseConnection uses to define the new classes which it creates. Right now, BaseModel supports a rudimentary object validation scheme, which ensures that new objects must be created with at least the number of attributes which its corresponding table declares as NOT NULL. 
+
+As far as this exercises questions go, their answers can be found in questions_database.rb. It utilizes BaseDatabaseConnection to create the relevant methods.
